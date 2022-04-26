@@ -34,13 +34,14 @@ class _BarcodeCreatePageState extends State<BarcodeCreatePage> {
                   ///3. set the widget key to the globalkey
                   imageKey = key;
                   return BarcodeWidget(
+                    
                       data: controller.text ,
                       backgroundColor: Colors.black,
                       color: Colors.white,
                       barcode: 
-                      controller.text.contains(RegExp(r'[A-Z a-z 0-9]', caseSensitive: false, multiLine: false)) ?
+                      controller.text.contains(RegExp(r'[^\p{Arabic}\w\s]', caseSensitive: true, multiLine: false)) ?
 
-                      Barcode.code128() : Barcode.pdf417(),
+                      Barcode.pdf417()  : Barcode.code128(),
                       
                       width: 200,
                       height: 200,

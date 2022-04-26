@@ -7,6 +7,12 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  // customError();
+  
+  // RenderErrorBox.backgroundColor = Colors.amber;
+  ErrorWidget.builder = ((FlutterErrorDetails details) => Container(
+        color: Colors.green,
+      ));
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
